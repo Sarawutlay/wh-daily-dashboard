@@ -35,9 +35,9 @@ export const Panel: React.FC<PanelProps> = ({
       <header
         className={`hatch flex items-center justify-between gap-3 px-4 py-2.5 text-white ${accentBg[accent]}`}
       >
-        <div className="flex items-baseline gap-2 min-w-0">
-          <h2 className="font-display font-semibold tracking-tight text-[15px] truncate">{title}</h2>
-          {subtitle && <span className="text-xs text-white/70 truncate">{subtitle}</span>}
+        <div className="flex min-w-0 flex-col leading-tight sm:flex-row sm:items-baseline sm:gap-2">
+          <h2 className="font-display font-semibold tracking-tight text-[15px]">{title}</h2>
+          {subtitle && <span className="text-xs text-white/70">{subtitle}</span>}
         </div>
         {right && <div className="shrink-0 text-xs font-num font-medium text-white/90">{right}</div>}
       </header>
