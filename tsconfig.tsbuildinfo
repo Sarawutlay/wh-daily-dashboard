@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/components/dashboard.tsx","./src/components/entryform.tsx","./src/components/fields.tsx","./src/components/icons.tsx","./src/components/panel.tsx","./src/lib/exportimage.ts","./src/lib/storage.ts","./src/lib/types.ts"],"version":"5.9.3"}
