@@ -62,7 +62,7 @@ export const Dashboard: React.FC<{ record: DailyRecord }> = ({ record }) => {
             <p className="mb-1.5 text-[11px] font-semibold text-dock-600">สมาชิก (ทีมงานคลังสินค้า)</p>
             <ol className="grid grid-cols-2 gap-x-3 gap-y-0.5 text-[12px] text-ink/80">
               {manpower.members.map((m, i) => (
-                <li key={i} className="truncate">
+                <li key={i} className="min-w-0 break-words">
                   {i + 1}) {m}
                 </li>
               ))}
@@ -264,7 +264,7 @@ export const Dashboard: React.FC<{ record: DailyRecord }> = ({ record }) => {
                 {otSummaryYesterday.map((r, i) => (
                   <div key={i} className="border-t border-dock-100 pt-1 first:border-t-0 first:pt-0">
                     <div className="flex justify-between gap-2">
-                      <span className="truncate text-ink/70">
+                      <span className="min-w-0 break-words text-ink/70">
                         {r.type} · {r.people} คน · {r.timeRange}
                       </span>
                       <span className="font-num shrink-0 font-semibold">{r.hours} ชม.</span>
@@ -295,7 +295,7 @@ export const Dashboard: React.FC<{ record: DailyRecord }> = ({ record }) => {
               <ul className="space-y-1.5 text-[13px]">
                 {todaysPlan.shipping.map((row, i) => (
                   <li key={i} className="flex items-center justify-between gap-2">
-                    <span className="truncate text-ink/70">{row.label}</span>
+                    <span className="min-w-0 break-words text-ink/70">{row.label}</span>
                     <span className="flex shrink-0 items-baseline gap-1.5 font-num">
                       <span className="font-bold">{row.trucks} คัน</span>
                       {row.pallets !== null && (
@@ -331,7 +331,7 @@ export const Dashboard: React.FC<{ record: DailyRecord }> = ({ record }) => {
                 {todaysPlan.plannedOT.map((r, i) => (
                   <div key={i} className="border-t border-dock-100 pt-1 first:border-t-0 first:pt-0">
                     <div className="flex justify-between gap-2">
-                      <span className="truncate text-ink/70">
+                      <span className="min-w-0 break-words text-ink/70">
                         {r.type} · {r.people} คน · {r.timeRange}
                       </span>
                       <span className="font-num shrink-0 font-semibold">{r.hours} ชม.</span>

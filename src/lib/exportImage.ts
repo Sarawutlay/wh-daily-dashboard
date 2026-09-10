@@ -16,6 +16,13 @@ interface ExportOptions {
  * match exactly what you see — no independent re-layout pass that can
  * mis-measure text and cause the overlapping/truncated text seen with
  * foreignObject-based capture on complex responsive grids.
+ *
+ * Note: we deliberately avoid CSS `text-overflow: ellipsis` / `truncate`
+ * anywhere inside the exported dashboard. html2canvas simulates ellipsis
+ * clipping by measuring and cutting text itself, and for Thai script (where
+ * vowel/tone marks stack above and below the base consonant) that manual
+ * cut can land mid-character-cluster and garble the glyphs. Letting text
+ * wrap normally instead avoids that entirely.
  */
 export async function exportNodeAsJpg(node: HTMLElement, options: ExportOptions): Promise<void> {
   const { fileName, backgroundColor = "#EEF1F6", scale = 2 } = options;
