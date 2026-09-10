@@ -43,7 +43,7 @@ export default function App() {
       await exportNodeAsJpg(dashboardRef.current, {
         fileName: `WH-Daily-Dashboard-${dateSlug}`,
         backgroundColor: "#EEF1F6",
-        pixelRatio: 3,
+        pixelRatio: 2,
       });
     } catch (err) {
       console.error(err);

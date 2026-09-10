@@ -262,11 +262,14 @@ export const Dashboard: React.FC<{ record: DailyRecord }> = ({ record }) => {
               <div className="space-y-1 text-[12px]">
                 {otSummaryYesterday.length === 0 && <p className="text-ink/50">ไม่มีข้อมูล</p>}
                 {otSummaryYesterday.map((r, i) => (
-                  <div key={i} className="flex justify-between gap-2 border-t border-dock-100 pt-1 first:border-t-0 first:pt-0">
-                    <span className="truncate text-ink/70">
-                      {r.type} · {r.people} คน · {r.timeRange}
-                    </span>
-                    <span className="font-num shrink-0 font-semibold">{r.hours} ชม.</span>
+                  <div key={i} className="border-t border-dock-100 pt-1 first:border-t-0 first:pt-0">
+                    <div className="flex justify-between gap-2">
+                      <span className="truncate text-ink/70">
+                        {r.type} · {r.people} คน · {r.timeRange}
+                      </span>
+                      <span className="font-num shrink-0 font-semibold">{r.hours} ชม.</span>
+                    </div>
+                    {r.task && <p className="mt-0.5 text-[11px] text-dock-500">งาน: {r.task}</p>}
                   </div>
                 ))}
               </div>
@@ -326,11 +329,14 @@ export const Dashboard: React.FC<{ record: DailyRecord }> = ({ record }) => {
               <div className="space-y-1 text-[12px]">
                 {todaysPlan.plannedOT.length === 0 && <p className="text-ink/50">ไม่มีข้อมูล</p>}
                 {todaysPlan.plannedOT.map((r, i) => (
-                  <div key={i} className="flex justify-between gap-2 border-t border-dock-100 pt-1 first:border-t-0 first:pt-0">
-                    <span className="truncate text-ink/70">
-                      {r.type} · {r.people} คน · {r.timeRange}
-                    </span>
-                    <span className="font-num shrink-0 font-semibold">{r.hours} ชม.</span>
+                  <div key={i} className="border-t border-dock-100 pt-1 first:border-t-0 first:pt-0">
+                    <div className="flex justify-between gap-2">
+                      <span className="truncate text-ink/70">
+                        {r.type} · {r.people} คน · {r.timeRange}
+                      </span>
+                      <span className="font-num shrink-0 font-semibold">{r.hours} ชม.</span>
+                    </div>
+                    {r.task && <p className="mt-0.5 text-[11px] text-dock-500">งาน: {r.task}</p>}
                   </div>
                 ))}
               </div>
